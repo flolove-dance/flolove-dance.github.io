@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>게임 웹페이지 - 메인</title>
+    <title>꽃사랑 사교댄스 - 홈</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -29,9 +29,17 @@
             background-color: #34495e;
         }
         .logo {
+            display: flex;
+            align-items: center;
             font-weight: bold;
             font-size: 24px;
             color: #3498db;
+            text-decoration: none;
+        }
+        .logo img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
         }
         .content {
             max-width: 800px;
@@ -63,7 +71,10 @@
 </head>
 <body>
     <div class="navbar">
-        <a href="#" class="logo">게임 로고</a>
+        <a href="#" class="logo">
+            <img src="game-logo.png" alt="게임 로고">
+            <span>게임로고</span>
+        </a>
         <a href="index.html">홈</a>
         <a href="intro.html">소개</a>
         <a href="info.html">정보</a>
