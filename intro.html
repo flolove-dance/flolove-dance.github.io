@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게임 웹페이지 - 소개</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        .navbar {
+            background-color: #2c3e50;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .navbar a {
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .navbar a:hover {
+            background-color: #34495e;
+        }
+        .logo {
+            font-weight: bold;
+            font-size: 24px;
+            color: #3498db;
+        }
+        .content {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            overflow: hidden; /* 내부 요소가 넘치지 않도록 함 */
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .tab {
+            width: 250px;
+            float: left;
+            background-color: #ecf0f1;
+            border-radius: 10px 0 0 10px;
+            height: 400px; /* 탭의 높이를 고정 */
+        }
+        .tab button {
+            display: block;
+            width: 100%;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 20px;
+            transition: 0.3s;
+            text-align: left;
+            background-color: transparent;
+            color: #2c3e50;
+            font-size: 16px;
+        }
+        .tab button:hover {
+            background-color: #bdc3c7;
+        }
+        .tab button.active {
+            background-color: #3498db;
+            color: white;
+        }
+        .tabcontent {
+            display: none;
+            padding: 20px;
+            margin-left: 250px;
+            animation: fadeEffect 1s;
+            height: 360px; /* 내용 박스의 높이를 고정 */
+            overflow-y: auto; /* 내용이 넘칠 경우 스크롤 생성 */
+        }
+        @keyframes fadeEffect {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        .tabcontent h3 {
+            color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#" class="logo">게임 로고</a>
+        <a href="index.html">홈</a>
+        <a href="intro.html">소개</a>
+        <a href="info.html">정보</a>
+    </div>
+    <div class="content">
+        <h1>게임 소개</h1>
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'Game')">게임 소개</button>
+            <button class="tablinks" onclick="openTab(event, 'Founder')">설립자</button>
+            <button class="tablinks" onclick="openTab(event, 'Factions')">게임 내 팩션</button>
+        </div>
+
+        <div id="Game" class="tabcontent">
+            <h3>게임 소개</h3>
+            <p>이 게임은 [게임 설명을 여기에 입력하세요]</p>
+        </div>
+
+        <div id="Founder" class="tabcontent">
+            <h3>설립자</h3>
+            <p>[설립자에 대한 정보를 여기에 입력하세요]</p>
+        </div>
+
+        <div id="Factions" class="tabcontent">
+            <h3>게임 내 팩션</h3>
+            <p>[게임 내 팩션들에 대한 설명을 여기에 입력하세요]</p>
+        </div>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // 페이지 로드 시 첫 번째 탭을 기본으로 열어둡니다
+        document.getElementsByClassName("tablinks")[0].click();
+    </script>
+</body>
+</html>
